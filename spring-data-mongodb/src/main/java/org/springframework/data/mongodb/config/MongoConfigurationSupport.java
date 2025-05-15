@@ -61,6 +61,9 @@ public abstract class MongoConfigurationSupport {
 	 * configuration class' (the concrete class, not this one here) by default. So if you have a
 	 * {@code com.acme.AppConfig} extending {@link MongoConfigurationSupport} the base package will be considered
 	 * {@code com.acme} unless the method is overridden to implement alternate behavior.
+	 * 
+	 * 返回启动时用于扫描 MongoDB 映射实体的基础包。默认返回配置类（具体类，而非此处的类）的包名称。因此，如果您有一个扩展了 
+	 * {@link MongoConfigurationSupport} 的 {@code com.acme.AppConfig}，则基础包将被视为 {@code com.acme}，除非该方法被重写以实现其他行为。
 	 *
 	 * @return the base packages to scan for mapped {@link Document} classes or an empty collection to not enable scanning
 	 *         for entities.
@@ -132,6 +135,8 @@ public abstract class MongoConfigurationSupport {
 	/**
 	 * Scans the mapping base package for classes annotated with {@link Document}. By default, it scans for entities in
 	 * all packages returned by {@link #getMappingBasePackages()}.
+	 * 
+	 * 扫描映射基础包中带有 {@link Document} 注释的类
 	 *
 	 * @see #getMappingBasePackages()
 	 * @return
@@ -149,7 +154,8 @@ public abstract class MongoConfigurationSupport {
 	}
 
 	/**
-	 * Scans the given base package for entities, i.e. MongoDB specific types annotated with {@link Document}.
+	 * Scans the given base package for entities, i.e. MongoDB specific types annotated with {@link Document}. 
+	 * 扫描给定基础包中的实体，即用 {@link Document} 注释的 MongoDB 特定类型。
 	 *
 	 * @param basePackage must not be {@literal null}.
 	 * @return
@@ -183,6 +189,8 @@ public abstract class MongoConfigurationSupport {
 	/**
 	 * Configures whether to abbreviate field names for domain objects by configuring a
 	 * {@link CamelCaseAbbreviatingFieldNamingStrategy} on the {@link MongoMappingContext} instance created.
+	 * 
+	 * 是否缩写域对象的字段名称
 	 *
 	 * @return
 	 */

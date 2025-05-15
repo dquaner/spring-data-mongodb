@@ -1,9 +1,11 @@
 [[requirements]]
 = Requirements
 
-The Spring Data MongoDB 4.x binaries require JDK level 17 and above and https://spring.io/docs[Spring Framework] {springVersion} and above.
+The Spring Data MongoDB 4.x binaries require JDK level 17 and above and https://spring.io/docs[Spring Framework] {springVersion} and above.  +
+Spring Data MongoDB 4.x 二进制文件需要 JDK 17+ 以及 https://spring.io/docs[Spring Framework] {springVersion} 及以上。
 
-In terms of database and driver, you need at least version 4.x of https://www.mongodb.org/[MongoDB] and a compatible MongoDB Java Driver (5.2.x).
+In terms of database and driver, you need at least version 4.x of https://www.mongodb.org/[MongoDB] and a compatible MongoDB Java Driver (5.2.x).  +
+在数据库和驱动程序方面，您至少需要 MongoDB 4.x 版本和与之兼容的 MongoDB Java Driver (5.2.x)。
 
 [[compatibility.matrix]]
 == Compatibility Matrix
@@ -11,7 +13,11 @@ In terms of database and driver, you need at least version 4.x of https://www.mo
 The following compatibility matrix summarizes Spring Data versions to MongoDB driver/database versions.
 Database versions show server generations that pass the Spring Data test suite.
 You can use newer server versions unless your application uses functionality that is affected by xref:preface.adoc#compatibility.changes[changes in the MongoDB server].
-See also the https://www.mongodb.com/docs/drivers/java/sync/current/compatibility/[official MongoDB driver compatibility matrix] for driver- and server version compatibility.
+See also the https://www.mongodb.com/docs/drivers/java/sync/current/compatibility/[official MongoDB driver compatibility matrix] for driver- and server version compatibility.  +
+以下兼容性矩阵汇总了 Spring Data 版本与 MongoDB 驱动程序/数据库版本的兼容性。
+数据库版本显示了通过 Spring Data test suite 的服务器版本。
+您可以使用较新的服务器版本，除非您的应用程序使用的功能受到 MongoDB 服务器版本变更的影响。
+另请参阅官方的 MongoDB 驱动程序兼容性矩阵，了解驱动程序和服务器版本的兼容性。
 
 ====
 [cols="h,m,m,m", options="header"]
@@ -95,11 +101,15 @@ See also the https://www.mongodb.com/docs/drivers/java/sync/current/compatibilit
 [[compatibility.changes-4.4]]
 === Relevant Changes in MongoDB 4.4
 
-* Fields list must not contain text search score property when no `$text` criteria present. See also https://docs.mongodb.com/manual/reference/operator/query/text/[`$text` operator]
-* Sort must not be an empty document when running map reduce.
+* Fields list must not contain text search score property when no `$text` criteria present. See also https://docs.mongodb.com/manual/reference/operator/query/text/[`$text` operator]  +
+当不存在 `$text` 条件时，字段列表不得包含文本搜索分数属性
+* Sort must not be an empty document when running map reduce.  +
+运行 map reduce 时，Sort 不能是空文档。
 
 [[compatibility.changes-4.2]]
 === Relevant Changes in MongoDB 4.2
 
-* Removal of `geoNear` command. See also https://docs.mongodb.com/manual/release-notes/4.2-compatibility/#remove-support-for-the-geonear-command[Removal of `geoNear`]
-* Removal of `eval` command. See also https://docs.mongodb.com/manual/release-notes/4.2-compatibility/#remove-support-for-the-eval-command[Removal of `eval`]
+* Removal of `geoNear` command. See also https://docs.mongodb.com/manual/release-notes/4.2-compatibility/#remove-support-for-the-geonear-command[Removal of `geoNear`]  +
+删除 `geoNear` 命令
+* Removal of `eval` command. See also https://docs.mongodb.com/manual/release-notes/4.2-compatibility/#remove-support-for-the-eval-command[Removal of `eval`]  +
+删除 `eval` 命令

@@ -1,18 +1,23 @@
 [[mongodb-getting-started]]
 = Getting Started
 
-An easy way to bootstrap setting up a working environment is to create a Spring-based project via https://start.spring.io/#!type=maven-project&dependencies=data-mongodb[start.spring.io] or create a Spring project in https://spring.io/tools[Spring Tools].
+An easy way to bootstrap setting up a working environment is to create a Spring-based project via https://start.spring.io/#!type=maven-project&dependencies=data-mongodb[start.spring.io] or create a Spring project in https://spring.io/tools[Spring Tools].  +
+设置工作环境的一个简单方法是通过 start.spring.io 创建基于 Spring 的项目或在 Spring Tools 中创建 Spring 项目。
 
 [[mongo.examples-repo]]
 == Examples Repository
 
-The GitHub https://github.com/spring-projects/spring-data-examples[spring-data-examples repository] hosts several examples that you can download and play around with to get a feel for how the library works.
+The GitHub https://github.com/spring-projects/spring-data-examples[spring-data-examples repository] hosts several examples that you can download and play around with to get a feel for how the library works.  +
+GitHub spring-data-examples 存储库包含几个示例，您可以下载并试用这些示例来了解该库的工作原理。
 
 [[mongodb.hello-world]]
 == Hello World
 
-First, you need to set up a running MongoDB server. Refer to the https://docs.mongodb.org/manual/core/introduction/[MongoDB Quick Start guide] for an explanation on how to startup a MongoDB instance.
-Once installed, starting MongoDB is typically a matter of running the following command: `/bin/mongod`
+First, you need to set up a running MongoDB server. Refer to the https://docs.mongodb.org/manual/core/introduction/[MongoDB Quick Start guide] for an explanation on how to startup a MongoDB instance.  +
+首先，您需要设置一个正在运行的 MongoDB 服务器。请参阅 https://docs.mongodb.org/manual/core/introduction/[MongoDB 快速入门指南]，了解如何启动 MongoDB 实例。
+
+Once installed, starting MongoDB is typically a matter of running the following command: `/bin/mongod`  +
+安装完成后，启动 MongoDB 通常只需运行以下命令：`/bin/mongod`
 
 Then you can create a `Person` class to persist:
 
@@ -42,7 +47,8 @@ include::example$example/ReactiveMongoApplication.java[tags=file]
 ----
 ======
 
-When you run the main program, the preceding examples produce the following output:
+When you run the main program, the preceding examples produce the following output:  +
+运行主程序时，前面的示例会产生以下输出：
 
 [source]
 ----
@@ -52,11 +58,17 @@ Person [id=4ddbba3c0be56b7e1b210166, name=Joe, age=34]
 10:01:32,984 DEBUG o.s.data.mongodb.core.MongoTemplate - Dropped collection [database.person]
 ----
 
-Even in this simple example, there are few things to notice:
+Even in this simple example, there are few things to notice:  +
+即使在这个简单的例子中，也有几点需要注意：
 
-* You can instantiate the central helper class of Spring Mongo, xref:mongodb/template-api.adoc[`MongoTemplate`], by using the standard or reactive `MongoClient` object and the name of the database to use.
-* The mapper works against standard POJO objects without the need for any additional metadata (though you can optionally provide that information. See xref:mongodb/mapping/mapping.adoc[here]).
-* Conventions are used for handling the `id` field, converting it to be an `ObjectId` when stored in the database.
-* Mapping conventions can use field access. Notice that the `Person` class has only getters.
-* If the constructor argument names match the field names of the stored document, they are used to instantiate the object
+* You can instantiate the central helper class of Spring Mongo, xref:mongodb/template-api.adoc[`MongoTemplate`], by using the standard or reactive `MongoClient` object and the name of the database to use.  +
+您可以使用标准或反应式 `MongoClient` 对象和要使用的数据库名称来实例化 Spring Mongo 的核心帮助类 `MongoTemplate`。
+* The mapper works against standard POJO objects without the need for any additional metadata (though you can optionally provide that information. See xref:mongodb/mapping/mapping.adoc[here]).  +
+映射器针对标准 POJO 对象进行工作，无需任何额外的元数据（尽管您可以选择提供该信息，请参阅 xref:mongodb/mapping/mapping.adoc[此处]）。
+* Conventions are used for handling the `id` field, converting it to be an `ObjectId` when stored in the database.  +
+约定用于处理 `id` 字段，在存储到数据库时将其转换为 `ObjectId`。
+* Mapping conventions can use field access. Notice that the `Person` class has only getters.  +
+映射约定可以使用字段访问。请注意，Person 类只有 getters。
+* If the constructor argument names match the field names of the stored document, they are used to instantiate the object.  +
+如果构造函数参数名称与存储文档的字段名称匹配，则使用它们来实例化对象。
 

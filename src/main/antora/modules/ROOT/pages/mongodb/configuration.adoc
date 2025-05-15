@@ -2,14 +2,18 @@
 = Connecting to MongoDB
 
 One of the first tasks when using MongoDB and Spring is to create a `MongoClient` object using the IoC container.
-There are two main ways to do this, either by using Java-based bean metadata or by using XML-based bean metadata.
+There are two main ways to do this, either by using Java-based bean metadata or by using XML-based bean metadata.  +
+使用 MongoDB 和 Spring 的首要任务之一是使用 IoC 容器创建一个 `MongoClient` 对象。
+主要有两种方法可以实现此目的：使用基于 Java 的 Bean 元数据或使用基于 XML 的 Bean 元数据。
 
-NOTE: For those not familiar with how to configure the Spring container using Java-based bean metadata instead of XML-based metadata, see the high-level introduction in the reference docs https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.0.html#new-java-configuration[here] as well as the detailed documentation https://docs.spring.io/spring-framework/docs/{springVersion}/reference/html/core.html#beans-java-instantiating-container[here].
+NOTE: For those not familiar with how to configure the Spring container using Java-based bean metadata instead of XML-based metadata, see the high-level introduction in the reference docs https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.0.html#new-java-configuration[here] as well as the detailed documentation https://docs.spring.io/spring-framework/docs/{springVersion}/reference/html/core.html#beans-java-instantiating-container[here].  +
+对于那些不熟悉如何使用基于 Java 而不是 XML 的元数据配置 Spring 容器的人，请参阅 https://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/new-in-3.0.html#new-java-configuration[here] 参考文档中的高级介绍以及 https://docs.spring.io/spring-framework/docs/{springVersion}/reference/html/core.html#beans-java-instantiating-container[here] 的详细文档。
 
 [[mongo.mongo-java-config]]
 == Registering a Mongo Instance
 
-The following example shows an example to register an instance of a `MongoClient`:
+The following example shows an example to register an instance of a `MongoClient`:  +
+下面的示例展示了注册 `MongoClient` 实例的示例：
 
 .Registering `MongoClient`
 [tabs]
@@ -69,11 +73,15 @@ https://www.springframework.org/schema/beans/spring-beans.xsd">
 
 This approach lets you use the standard `MongoClient` instance, with the container using Spring's `MongoClientFactoryBean`/`ReactiveMongoClientFactoryBean`.
 As compared to instantiating a `MongoClient` instance directly, the `FactoryBean` has the added advantage of also providing the container with an `ExceptionTranslator` implementation that translates MongoDB exceptions to exceptions in Spring's portable `DataAccessException` hierarchy for data access classes annotated with the `@Repository` annotation.
-This hierarchy and the use of `@Repository` is described in link:{springDocsUrl}/data-access.html[Spring's DAO support features].
+This hierarchy and the use of `@Repository` is described in link:{springDocsUrl}/data-access.html[Spring's DAO support features].  +
+这种方法允许您使用标准的 `MongoClient` 实例，容器则使用 Spring 的 `MongoClientFactoryBean`/`ReactiveMongoClientFactoryBean`。
+与直接实例化 `MongoClient` 实例相比，`FactoryBean` 还有一个额外的优势，它还为容器提供了一个 `ExceptionTranslator` 实现，该实现将 MongoDB 异常转换为 Spring 可移植 `DataAccessException` 层次结构中的异常，适用于使用 `@Repository` 注解的数据访问类。
+此层次结构和 `@Repository` 的使用在 link:{springDocsUrl}/data-access.html[Spring 的 DAO 支持特性] 中有详细描述。
 
-The following example shows an example of a Java-based bean metadata that supports exception translation on `@Repository` annotated classes:
+The following example shows an example of a Java-based bean metadata that supports exception translation on `@Repository` annotated classes:  +
+下面的示例展示了一个基于 Java 的 bean 元数据的示例，该元数据支持对 `@Repository` 注释类进行异常转换：
 
-.Registering a `MongoClient` via `MongoClientFactoryBean` / `ReactiveMongoClientFactoryBean`
+.通过 `MongoClientFactoryBean` / `ReactiveMongoClientFactoryBean` 注册 `MongoClient` 
 [tabs]
 ======
 Imperative::
@@ -113,14 +121,18 @@ public class AppConfig {
 ----
 ======
 
-To access the `MongoClient` object created by the `FactoryBean` in other `@Configuration` classes or your own classes, use a `private @Autowired MongoClient mongoClient;` field.
+To access the `MongoClient` object created by the `FactoryBean` in other `@Configuration` classes or your own classes, use a `private @Autowired MongoClient mongoClient;` field.  +
+要访问其他 `@Configuration` 类或您自己的类中的 `FactoryBean` 创建的 `MongoClient` 对象，请使用 `private @Autowired MongoClient mongoClient;` 字段。
 
 [[mongo.mongo-db-factory]]
 == The MongoDatabaseFactory Interface
 
 While `MongoClient` is the entry point to the MongoDB driver API, connecting to a specific MongoDB database instance requires additional information, such as the database name and an optional username and password.
 With that information, you can obtain a `MongoDatabase` object and access all the functionality of a specific MongoDB database instance.
-Spring provides the `org.springframework.data.mongodb.core.MongoDatabaseFactory` & `org.springframework.data.mongodb.core.ReactiveMongoDatabaseFactory` interfaces, shown in the following listing, to bootstrap connectivity to the database:
+Spring provides the `org.springframework.data.mongodb.core.MongoDatabaseFactory` & `org.springframework.data.mongodb.core.ReactiveMongoDatabaseFactory` interfaces, shown in the following listing, to bootstrap connectivity to the database:  +
+虽然 `MongoClient` 是 MongoDB 驱动程序 API 的入口点，但连接到特定的 MongoDB 数据库实例需要额外的信息，例如数据库名称以及可选的用户名和密码。
+有了这些信息，您就可以获取 `MongoDatabase` 对象并访问特定 MongoDB 数据库实例的所有功能。
+Spring 提供了 `org.springframework.data.mongodb.core.MongoDatabaseFactory` 和 `org.springframework.data.mongodb.core.ReactiveMongoDatabaseFactory` 接口（如下表所示）来引导与数据库的连接：
 
 [tabs]
 ======
@@ -150,9 +162,12 @@ public interface ReactiveMongoDatabaseFactory {
 ======
 
 The following sections show how you can use the container with either Java-based or XML-based metadata to configure an instance of the `MongoDatabaseFactory` interface.
-In turn, you can use the `MongoDatabaseFactory` / `ReactiveMongoDatabaseFactory` instance to configure `MongoTemplate` / `ReactiveMongoTemplate`.
+In turn, you can use the `MongoDatabaseFactory` / `ReactiveMongoDatabaseFactory` instance to configure `MongoTemplate` / `ReactiveMongoTemplate`.  +
+以下部分展示了如何使用基于 Java 或 XML 元数据的容器来配置 `MongoDatabaseFactory` 接口的实例。
+反过来，您可以使用 `MongoDatabaseFactory` / `ReactiveMongoDatabaseFactory` 实例来配置 `MongoTemplate` / `ReactiveMongoTemplate`。
 
-Instead of using the IoC container to create an instance of the template, you can use them in standard Java code, as follows:
+Instead of using the IoC container to create an instance of the template, you can use them in standard Java code, as follows:  +
+除了使用 IoC 容器创建模板实例之外，您还可以在标准 Java 代码中使用它们，如下所示：
 
 [tabs]
 ======
@@ -171,7 +186,9 @@ public class MongoApplication {
 }
 ----
 The code in bold highlights the use of `SimpleMongoClientDbFactory` and is the only difference between the listing shown in the xref:mongodb/getting-started.adoc[getting started section].
-Use `SimpleMongoClientDbFactory` when choosing `com.mongodb.client.MongoClient` as the entrypoint of choice.
+Use `SimpleMongoClientDbFactory` when choosing `com.mongodb.client.MongoClient` as the entrypoint of choice.  +
+粗体代码突出显示了 `SimpleMongoClientDbFactory` 的使用，这也是与 xref:mongodb/getting-started.adoc[入门部分] 中所示清单之间的唯一区别。
+当选择 `com.mongodb.client.MongoClient` 作为入口点时，请使用 `SimpleMongoClientDbFactory`。
 
 Reactive::
 +
@@ -194,7 +211,8 @@ public class ReactiveMongoApplication {
 == Registering a `MongoDatabaseFactory` / `ReactiveMongoDatabaseFactory`
 
 To register a `MongoDatabaseFactory`/ `ReactiveMongoDatabaseFactory` instance with the container, you write code much like what was highlighted in the previous section.
-The following listing shows a simple example:
+The following listing shows a simple example:  +
+要向容器注册 `MongoDatabaseFactory`/`ReactiveMongoDatabaseFactory` 实例，您需要编写与上一节中突出显示的内容非常类似的代码。以下清单展示了一个简单的示例：
 
 [tabs]
 ======
@@ -229,7 +247,10 @@ public class ReactiveMongoConfiguration {
 
 MongoDB Server generation 3 changed the authentication model when connecting to the DB.
 Therefore, some of the configuration options available for authentication are no longer valid.
-You should use the `MongoClient`-specific options for setting credentials through `MongoCredential` to provide authentication data, as shown in the following example:
+You should use the `MongoClient`-specific options for setting credentials through `MongoCredential` to provide authentication data, as shown in the following example:  +
+MongoDB 服务器第三代更改了连接数据库时的身份验证模型。
+因此，一些可用于身份验证的配置选项不再有效。
+您应该使用特定于 `MongoClient` 的选项，通过 `MongoCredential` 设置凭据来提供身份验证数据，如下例所示：
 
 [tabs]
 ======
@@ -269,7 +290,8 @@ The following example shows encoded credentials:
 See https://tools.ietf.org/html/rfc3986#section-2.2[section 2.2 of RFC 3986] for further details.
 ======
 
-If you need to configure additional options on the `com.mongodb.client.MongoClient` instance that is used to create a `SimpleMongoClientDbFactory`, you can refer to an existing bean as shown in the following example. To show another common usage pattern, the following listing shows the use of a property placeholder, which lets you parametrize the configuration and the creation of a `MongoTemplate`:
+If you need to configure additional options on the `com.mongodb.client.MongoClient` instance that is used to create a `SimpleMongoClientDbFactory`, you can refer to an existing bean as shown in the following example. To show another common usage pattern, the following listing shows the use of a property placeholder, which lets you parametrize the configuration and the creation of a `MongoTemplate`:  +
+如果您需要在用于创建 `SimpleMongoClientDbFactory` 的 `com.mongodb.client.MongoClient` 实例上配置其他选项，可以引用现有 bean，如下例所示。为了展示另一种常见的使用模式，以下清单展示了属性占位符的使用，它允许您参数化配置和创建 `MongoTemplate` ：
 
 [tabs]
 ======
@@ -278,6 +300,7 @@ Java::
 [source,java,indent=0,subs="verbatim,quotes",role="primary"]
 ----
 @Configuration
+//指定资源文件读取的位置
 @PropertySource("classpath:/com/myapp/mongodb/config/mongo.properties")
 public class MongoAppConfig extends AbstractMongoClientConfiguration {
 
