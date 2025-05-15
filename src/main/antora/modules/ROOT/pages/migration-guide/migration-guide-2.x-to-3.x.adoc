@@ -2,7 +2,9 @@
 = Migration Guide from 2.x to 3.x
 
 Spring Data MongoDB 3.x requires the MongoDB Java Driver 4.x +
-To learn more about driver versions please visit the https://www.mongodb.com/docs/drivers/java/sync/current/upgrade/[MongoDB Documentation].
+To learn more about driver versions please visit the https://www.mongodb.com/docs/drivers/java/sync/current/upgrade/[MongoDB Documentation].  +
+Spring Data MongoDB 3.x 需要 MongoDB Java Driver 4.x  +
+要了解有关驱动程序版本的更多信息，请访问 MongoDB 文档。
 
 [[dependency-changes]]
 == Dependency Changes
@@ -12,16 +14,22 @@ To learn more about driver versions please visit the https://www.mongodb.com/doc
 ** core-jar
 ** sync-jar
 
-The change in dependencies allows usage of the reactive support without having to pull the synchronous driver.
-NOTE: The new sync driver does no longer support `com.mongodb.DBObject`. Please use `org.bson.Document` instead.
+The change in dependencies allows usage of the reactive support without having to pull the synchronous driver.  +
+依赖关系的变化允许使用反应式支持，而无需拉动同步驱动程序。
+
+NOTE: The new sync driver does no longer support `com.mongodb.DBObject`. Please use `org.bson.Document` instead.  +
+新的同步驱动程序不再支持 `com.mongodb.DBObject`，请改用 `org.bson.Document`。
 
 [[signature-changes]]
 == Signature Changes
 
 * `MongoTemplate` no longer supports `com.mongodb.MongoClient` and `com.mongodb.MongoClientOptions`.
-Please use `com.mongodb.client.MongoClient` and `com.mongodb.MongoClientSettings` instead.
+Please use `com.mongodb.client.MongoClient` and `com.mongodb.MongoClientSettings` instead.  +
+`MongoTemplate` 不再支持 `com.mongodb.MongoClient` 和 `com.mongodb.MongoClientOptions`。
+请改用 `com.mongodb.client.MongoClient` 和 `com.mongodb.MongoClientSettings`。
 
-In case you're using `AbstractMongoConfiguration` please switch to `AbstractMongoClientConfiguration`.
+In case you're using `AbstractMongoConfiguration` please switch to `AbstractMongoClientConfiguration`.  +
+如果您正在使用 `AbstractMongoConfiguration`，请切换到 `AbstractMongoClientConfiguration`。
 
 [[namespace-changes]]
 == Namespace Changes

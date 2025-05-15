@@ -2,12 +2,16 @@
 = MongoDB Support
 :page-section-summary-toc: 1
 
-Spring Data support for MongoDB contains a wide range of features:
+Spring Data support for MongoDB contains a wide range of features:  +
+Spring Data 对 MongoDB 的支持包含广泛的功能：
 
-* xref:mongodb/template-config.adoc[Spring configuration support] with Java-based `@Configuration` classes or an XML namespace for a Mongo driver instance and replica sets.
+* xref:mongodb/template-config.adoc[Spring configuration support] with Java-based `@Configuration` classes or an XML namespace for a Mongo driver instance and replica sets.  +
+在 Spring 中可以使用基于 Java 的 `@Configuration` 类或 XML 命名空间来配置 Mongo driver 实例和副本集。
 * xref:mongodb/template-api.adoc[`MongoTemplate` helper class] that increases productivity when performing common Mongo operations.
-Includes integrated object mapping between documents and POJOs.
-* xref:mongodb/template-api.adoc#mongo-template.exception-translation[Exception translation] into Spring's portable Data Access Exception hierarchy.
+Includes integrated object mapping between documents and POJOs.  +
+`MongoTemplate` 辅助类可提高执行常见 Mongo 操作的效率。它集成了 documents 和 POJO 之间的对象映射功能。
+* xref:mongodb/template-api.adoc#mongo-template.exception-translation[Exception translation] into Spring's portable Data Access Exception hierarchy.  +
+将异常转换为 Spring 的可移植数据访问异常层次结构。
 * Feature-rich xref:mongodb/mapping/mapping.adoc[Object Mapping] integrated with Spring's Conversion Service.
 * xref:mongodb/mapping/mapping.adoc#mapping-usage-annotations[Annotation-based mapping metadata] that is extensible to support other metadata formats.
 * xref:mongodb/lifecycle-events.adoc[Persistence and mapping lifecycle events].

@@ -2,16 +2,21 @@ image:https://spring.io/badges/spring-data-mongodb/ga.svg[Spring Data MongoDB,li
 
 = Spring Data MongoDB image:https://jenkins.spring.io/buildStatus/icon?job=spring-data-mongodb%2Fmain&subject=Build[link=https://jenkins.spring.io/view/SpringData/job/spring-data-mongodb/] image:https://img.shields.io/badge/Revved%20up%20by-Develocity-06A0CE?logo=Gradle&labelColor=02303A["Revved up by Develocity", link="https://ge.spring.io/scans?search.rootProjectNames=Spring Data MongoDB"]
 
-The primary goal of the https://spring.io/projects/spring-data[Spring Data] project is to make it easier to build Spring-powered applications that use new data access technologies such as non-relational databases, map-reduce frameworks, and cloud based data services.
+The primary goal of the https://spring.io/projects/spring-data[Spring Data] project is to make it easier to build Spring-powered applications that use new data access technologies such as non-relational databases, map-reduce frameworks, and cloud based data services.  +  
+https://spring.io/projects/spring-data[Spring Data] 项目的主要目标是使构建基于spring的应用程序更容易，这些应用程序使用新的数据访问技术，如非关系数据库、map-reduce框架和基于云的数据服务。
 
 The Spring Data MongoDB project aims to provide a familiar and consistent Spring-based programming model for new datastores while retaining store-specific features and capabilities.
 The Spring Data MongoDB project provides integration with the MongoDB document database.
-Key functional areas of Spring Data MongoDB are a POJO centric model for interacting with a MongoDB `+Document+` and easily writing a repository style data access layer.
+Key functional areas of Spring Data MongoDB are a POJO centric model for interacting with a MongoDB `+Document+` and easily writing a repository style data access layer.  +
+Spring Data MongoDB 项目旨在为新的数据存储提供一个熟悉且一致的基于Spring的编程模型，同时保留特定于存储的特性和功能。
+Spring Data MongoDB 项目提供了与 MongoDB 文档数据库的集成。
+Spring Data MongoDB 的关键功能领域是以 POJO 为中心的模型，用于与 MongoDB `+Document+` 交互，并轻松编写 repository 风格的数据访问层。
 
 [[code-of-conduct]]
-== Code of Conduct
+== Code of Conduct【行为准则】
 
-This project is governed by the https://github.com/spring-projects/.github/blob/e3cc2ff230d8f1dca06535aa6b5a4a23815861d4/CODE_OF_CONDUCT.md[Spring Code of Conduct]. By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+This project is governed by the https://github.com/spring-projects/.github/blob/e3cc2ff230d8f1dca06535aa6b5a4a23815861d4/CODE_OF_CONDUCT.md[Spring Code of Conduct]. By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.  +
+本项目受 https://github.com/spring-projects/.github/blob/e3cc2ff230d8f1dca06535aa6b5a4a23815861d4/CODE_OF_CONDUCT.md[Spring行为准则约束]。通过参与，您将遵守本行为准则。请向 spring-code-of-conduct@pivotal.io 报告不可接受的行为。
 
 [[getting-started]]
 == Getting Started
@@ -107,8 +112,10 @@ Having trouble with Spring Data? We’d love to help!
 * Check the
 https://docs.spring.io/spring-data/mongodb/reference/[reference documentation], and https://docs.spring.io/spring-data/mongodb/docs/current/api/[Javadocs]
 * Learn the Spring basics – Spring Data builds on Spring Framework, check the https://spring.io[spring.io] web-site for a wealth of reference documentation.
-If you are just starting out with Spring, try one of the https://spring.io/guides[guides].
-* If you are upgrading, check out the https://docs.spring.io/spring-data/mongodb/docs/current/changelog.txt[changelog] for "`new and noteworthy`" features.
+If you are just starting out with Spring, try one of the https://spring.io/guides[guides].  +
+学习Spring基础知识 - Spring Data建立在Spring框架上，spring.io 网站上有丰富的参考文档。如果您刚刚开始使用Spring，请尝试其中一个指南。
+* If you are upgrading, check out the https://docs.spring.io/spring-data/mongodb/docs/current/changelog.txt[changelog] for "`new and noteworthy`" features.  +
+新的值得注意的事项
 * Ask a question - we monitor https://stackoverflow.com[stackoverflow.com] for questions tagged with https://stackoverflow.com/tags/spring-data[`spring-data-mongodb`].
 * Report bugs with Spring Data MongoDB at https://github.com/spring-projects/spring-data-mongodb/issues[github.com/spring-projects/spring-data-mongodb/issues].
 
@@ -116,7 +123,8 @@ If you are just starting out with Spring, try one of the https://spring.io/guide
 == Reporting Issues
 
 Spring Data uses Github as issue tracking system to record bugs and feature requests.
-If you want to raise an issue, please follow the recommendations below:
+If you want to raise an issue, please follow the recommendations below:  +
+Spring Data使用Github作为问题跟踪系统来记录bug和功能请求。如果你想提出问题，请遵循以下建议：
 
 * Before you log a bug, please search the https://github.com/spring-projects/spring-data-mongodb/issues[issue tracker] to see if someone has already reported the problem.
 * If the issue does not already exist, https://github.com/spring-projects/spring-data-mongodb/issues/new[create a new issue].
@@ -126,10 +134,13 @@ If you want to raise an issue, please follow the recommendations below:
 [[guides]]
 == Guides
 
-The https://spring.io/[spring.io] site contains several guides that show how to use Spring Data step-by-step:
+The https://spring.io/[spring.io] site contains several guides that show how to use Spring Data step-by-step:  +
+https://spring.io/[spring.io] 包含几个指南，展示如何逐步使用Spring Data：
 
-* https://spring.io/guides/gs/accessing-data-mongodb/[Accessing Data with MongoDB] is a very basic guide that shows you how to create a simple application and how to access data using repositories.
-* https://spring.io/guides/gs/accessing-mongodb-data-rest/[Accessing MongoDB Data with REST] is a guide to creating a REST web service exposing data stored in MongoDB through repositories.
+* https://spring.io/guides/gs/accessing-data-mongodb/[Accessing Data with MongoDB] is a very basic guide that shows you how to create a simple application and how to access data using repositories.  +
+一个非常基础的指南，它展示了如何创建一个简单的应用程序以及如何使用存储库访问数据。
+* https://spring.io/guides/gs/accessing-mongodb-data-rest/[Accessing MongoDB Data with REST] is a guide to creating a REST web service exposing data stored in MongoDB through repositories.  +
+创建一个REST web服务，通过存储库公开存储在MongoDB中的数据。
 
 [[examples]]
 == Examples
@@ -140,28 +151,35 @@ The https://spring.io/[spring.io] site contains several guides that show how to 
 == Building from Source
 
 You do not need to build from source to use Spring Data. Binaries are available in https://repo.spring.io[repo.spring.io]
-and accessible from Maven using the Maven configuration noted <<maven-configuration,above>>.
+and accessible from Maven using the Maven configuration noted <<maven-configuration,above>>.  +
+您无需从源代码构建即可使用 Spring Data。二进制文件可在 repo.spring.io 中找到，并可使用上述 Maven 配置从 Maven 访问。
 
 NOTE: Configuration for Gradle is similar to Maven.
 
 The best way to get started is by creating a Spring Boot project using MongoDB on https://start.spring.io[start.spring.io].
 Follow this https://start.spring.io/#type=maven-project&language=java&platformVersion=3.0.0&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-mongodb[link]
 to build an imperative application and this https://start.spring.io/#type=maven-project&language=java&platformVersion=3.0.0&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-mongodb-reactive[link]
-to build a reactive one.
+to build a reactive one.  +
+最好的入门方法是在 start.spring.io 上使用 MongoDB 创建一个 Spring Boot 项目。点击此 https://start.spring.io/#type=maven-project&language=java&platformVersion=3.0.0&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-mongodb[link] 构建命令式应用程序，点击此 https://start.spring.io/#type=maven-project&language=java&platformVersion=3.0.0&packaging=jar&jvmVersion=17&groupId=com.example&artifactId=demo&name=demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.example.demo&dependencies=data-mongodb-reactive[link] 构建响应式应用程序。
 
 However, if you want to try out the latest and greatest, Spring Data MongoDB can be easily built with the https://github.com/takari/maven-wrapper[Maven wrapper]
-and minimally, JDK 17 (https://www.oracle.com/java/technologies/downloads/[JDK downloads]).
+and minimally, JDK 17 (https://www.oracle.com/java/technologies/downloads/[JDK downloads]).  +
+但是，如果您想尝试最新和最好的功能，可以使用 Maven 包装器和最低限度的 JDK 17（JDK 下载）轻松构建 Spring Data MongoDB。
 
 In order to build Spring Data MongoDB, you will need to https://www.mongodb.com/try/download/community[download]
-and https://docs.mongodb.com/manual/installation/[install a MongoDB distribution].
+and https://docs.mongodb.com/manual/installation/[install a MongoDB distribution].  +
+为了构建 Spring Data MongoDB，您需要下载并安装 MongoDB 发行版。
 
 Once you have installed MongoDB, you need to start a MongoDB server. It is convenient to set an environment variable to
-your MongoDB installation directory (e.g. `MONGODB_HOME`).
+your MongoDB installation directory (e.g. `MONGODB_HOME`).  +
+安装 MongoDB 后，您需要启动 MongoDB 服务器。将环境变量设置为 MongoDB 的安装目录（例如 `MONGODB_HOME`）会很方便。
 
 To run the full test suite, a https://docs.mongodb.com/manual/tutorial/deploy-replica-set/[MongoDB Replica Set]
-is required.
+is required.  +
+要运行完整的测试套件，需要 MongoDB 副本集。
 
-To run the MongoDB server enter the following command from a command-line:
+To run the MongoDB server enter the following command from a command-line:  +
+要运行 MongoDB 服务器，请从命令行输入以下命令：
 
 [source,bash]
 ----
@@ -173,10 +191,13 @@ $ $MONGODB_HOME/bin/mongod --dbpath $MONGODB_HOME/runtime/data --ipv6 --port 270
 Once the MongoDB server starts up, you should see the message (`msg`), "_Successfully connected to host_".
 
 Notice the `--dbpath` option to the `mongod` command. You can set this to anything you like, but in this case, we set
-the absolute path to a sub-directory (`runtime/data/`) under the MongoDB installation directory (in `$MONGODB_HOME`).
+the absolute path to a sub-directory (`runtime/data/`) under the MongoDB installation directory (in `$MONGODB_HOME`).  +
+注意 mongod 命令的 --dbpath 选项。您可以将其设置为任何您喜欢的值，但在本例中，我们将其设置为 MongoDB 安装目录（位于 $MONGODB_HOME）下子目录 (runtime/data/) 的绝对路径。
 
 You need to initialize the MongoDB replica set only once on the first time the MongoDB server is started.
-To initialize the replica set, start a mongo client:
+To initialize the replica set, start a mongo client:  +
+首次启动 MongoDB 服务器时，只需初始化一次 MongoDB 副本集。
+要初始化副本集，请启动 Mongo 客户端：
 
 [source,bash]
 ----
@@ -193,7 +214,8 @@ mongo> rs.initiate({ _id: 'rs0', members: [ { _id: 0, host: '127.0.0.1:27017' } 
 ----
 
 Finally, on UNIX-based system (for example, Linux or Mac OS X) you may need to adjust the `ulimit`.
-In case you need to, you can adjust the `ulimit` with the following command (32768 is just a recommendation):
+In case you need to, you can adjust the `ulimit` with the following command (32768 is just a recommendation):  +
+最后，在基于 UNIX 的系统（例如 Linux 或 Mac OS X）上，您可能需要调整 ulimit。如果需要，可以使用以下命令调整 ulimit（建议使用 32768）：
 
 [source,bash]
 ----
@@ -202,7 +224,8 @@ $ ulimit -n 32768
 
 You can use `ulimit -a` again to verify the `ulimit` for "_open files_" was set appropriately.
 
-Now you are ready to build Spring Data MongoDB. Simply enter the following `mvnw` (Maven Wrapper) command:
+Now you are ready to build Spring Data MongoDB. Simply enter the following `mvnw` (Maven Wrapper) command:  +
+现在您可以构建 Spring Data MongoDB 了。只需输入以下 `mvnw`（Maven Wrapper）命令：
 
 [source,bash]
 ----
@@ -214,9 +237,10 @@ If you want to build with the regular `mvn` command, you will need https://maven
 _Also see link:CONTRIBUTING.adoc[CONTRIBUTING.adoc] if you wish to submit pull requests, and in particular, please sign
 the https://cla.pivotal.io/sign/spring[Contributor’s Agreement] before your first non-trivial change._
 
-=== Building reference documentation
+=== Building reference documentation【构建参考文档】
 
-Building the documentation builds also the project without running tests.
+Building the documentation builds also the project without running tests.  +
+构建文档也构建了不运行测试的项目。
 
 [source,bash]
 ----

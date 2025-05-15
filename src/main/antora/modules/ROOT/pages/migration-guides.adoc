@@ -2,7 +2,8 @@
 = Migration Guides
 :page-section-summary-toc: 1
 
-This section contains version-specific migration guides explaining how to upgrade between two versions.
+This section contains version-specific migration guides explaining how to upgrade between two versions.  +
+本节包含特定版本的迁移指南，解释如何在两个版本之间升级。
 
 
 
